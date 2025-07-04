@@ -1,0 +1,226 @@
+[gd_scene load_steps=10 format=3 uid="uid://bjwsr7tb41e0t"]
+
+[ext_resource type="Script" path="res://shop.gd" id="1_inc51"]
+[ext_resource type="AudioStream" uid="uid://7c2iut3mi5w7" path="res://UpgradeButtonClick.mp3" id="2_pm06c"]
+[ext_resource type="AudioStream" uid="uid://cxdtbqtqhdje7" path="res://IncorrectBuzzer.mp3" id="3_vse04"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fhxh3"]
+bg_color = Color(0.141176, 0.137255, 0.137255, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(1, 0.211765, 0.670588, 1)
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r7u2d"]
+bg_color = Color(0.654902, 0.670588, 0.705882, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_color = Color(0.658824, 0.67451, 0.709804, 0.360784)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0mm33"]
+bg_color = Color(0.81, 0.4779, 0.65502, 1)
+corner_radius_top_left = 25
+corner_radius_top_right = 25
+corner_radius_bottom_right = 25
+corner_radius_bottom_left = 25
+shadow_color = Color(0.737255, 0.439216, 0.6, 0.337255)
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jpyc2"]
+bg_color = Color(1, 0.211765, 0.670588, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+shadow_color = Color(1, 0.211765, 0.670588, 0.352941)
+shadow_size = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_78ugn"]
+bg_color = Color(0.423529, 0.423529, 0.423529, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.141176, 0.137255, 0.137255, 1)
+border_blend = true
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l1l6j"]
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_inc51")
+
+[node name="UPGRADES" type="Label" parent="."]
+z_as_relative = false
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 32.0
+theme_override_colors/font_color = Color(0.643137, 0.658824, 0.694118, 1)
+theme_override_colors/font_outline_color = Color(1, 0.211765, 0.670588, 1)
+theme_override_constants/outline_size = 3
+text = "UPGRADES"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Panel" type="Panel" parent="."]
+z_index = -1
+layout_mode = 0
+offset_right = 128.0
+offset_bottom = 552.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fhxh3")
+
+[node name="ClickMult" type="Label" parent="."]
+layout_mode = 0
+offset_top = 64.0
+offset_right = 128.0
+offset_bottom = 96.0
+theme_override_colors/font_color = Color(0.643137, 0.658824, 0.694118, 1)
+theme_override_colors/font_outline_color = Color(1, 0.211765, 0.670588, 1)
+theme_override_constants/outline_size = 3
+text = "CLICK POWER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AutoMult" type="Label" parent="."]
+layout_mode = 0
+offset_top = 304.0
+offset_right = 128.0
+offset_bottom = 336.0
+theme_override_colors/font_color = Color(0.643137, 0.658824, 0.694118, 1)
+theme_override_colors/font_outline_color = Color(1, 0.211765, 0.670588, 1)
+theme_override_constants/outline_size = 3
+text = "AUTO POWER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AutoUnlock" type="Button" parent="." groups=["upgrade"]]
+layout_mode = 0
+offset_left = 8.0
+offset_top = 32.0
+offset_right = 120.0
+offset_bottom = 64.0
+theme_override_colors/font_color = Color(1, 0.211765, 0.670588, 1)
+theme_override_font_sizes/font_size = 11
+theme_override_styles/normal = SubResource("StyleBoxFlat_r7u2d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0mm33")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jpyc2")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_78ugn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l1l6j")
+text = "AUTOCLICKER
+25"
+
+[node name="ClickUpgrade1" type="Button" parent="." groups=["upgrade"]]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 96.0
+offset_right = 96.0
+offset_bottom = 160.0
+theme_override_colors/font_color = Color(1, 0.211765, 0.670588, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_r7u2d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0mm33")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jpyc2")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_78ugn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l1l6j")
+
+[node name="ClickUpgrade2" type="Button" parent="." groups=["upgrade"]]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 168.0
+offset_right = 96.0
+offset_bottom = 232.0
+theme_override_colors/font_color = Color(1, 0.211765, 0.670588, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_r7u2d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0mm33")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jpyc2")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_78ugn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l1l6j")
+
+[node name="ClickUpgrade3" type="Button" parent="." groups=["upgrade"]]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 240.0
+offset_right = 96.0
+offset_bottom = 304.0
+theme_override_colors/font_color = Color(1, 0.211765, 0.670588, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_r7u2d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0mm33")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jpyc2")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_78ugn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l1l6j")
+
+[node name="AutoUpgrade1" type="Button" parent="." groups=["upgrade"]]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 336.0
+offset_right = 96.0
+offset_bottom = 400.0
+theme_override_colors/font_color = Color(1, 0.211765, 0.670588, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_r7u2d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0mm33")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jpyc2")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_78ugn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l1l6j")
+
+[node name="AutoUpgrade2" type="Button" parent="." groups=["upgrade"]]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 408.0
+offset_right = 96.0
+offset_bottom = 472.0
+theme_override_colors/font_color = Color(1, 0.211765, 0.670588, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_r7u2d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0mm33")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jpyc2")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_78ugn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l1l6j")
+
+[node name="AutoUpgrade3" type="Button" parent="." groups=["upgrade"]]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 480.0
+offset_right = 96.0
+offset_bottom = 544.0
+theme_override_colors/font_color = Color(1, 0.211765, 0.670588, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_r7u2d")
+theme_override_styles/hover = SubResource("StyleBoxFlat_0mm33")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jpyc2")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_78ugn")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l1l6j")
+
+[node name="UpgradeClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_pm06c")
+pitch_scale = 0.88
+
+[node name="IncorrectBuzzer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_vse04")
+pitch_scale = 1.17
+
+[connection signal="pressed" from="AutoUnlock" to="." method="_on_auto_unlock_pressed"]
+[connection signal="pressed" from="ClickUpgrade1" to="." method="_on_click_upgrade_1_pressed"]
+[connection signal="pressed" from="ClickUpgrade2" to="." method="_on_click_upgrade_2_pressed"]
+[connection signal="pressed" from="ClickUpgrade3" to="." method="_on_click_upgrade_3_pressed"]
+[connection signal="pressed" from="AutoUpgrade1" to="." method="_on_auto_upgrade_1_pressed"]
+[connection signal="pressed" from="AutoUpgrade2" to="." method="_on_auto_upgrade_2_pressed"]
+[connection signal="pressed" from="AutoUpgrade3" to="." method="_on_auto_upgrade_3_pressed"]
